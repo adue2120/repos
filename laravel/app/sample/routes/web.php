@@ -17,4 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/hello/{id?}', 'App\Http\Controllers\HelloController@index');
+Route::post('/hello', 'App\Http\Controllers\HelloController@post');
+// Route::get('hello', function() {
+//     return view('hello.index');
+// });
+//Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+//Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+//Route::get('/hello/other', 'App\Http\Controllers\HelloController@other');
 Route::get('/books', 'App\Http\Controllers\BookController@index');

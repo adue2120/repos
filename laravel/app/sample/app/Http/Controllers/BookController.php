@@ -9,15 +9,21 @@ use App\Models\Book;
 class BookController extends Controller
 {
 
-    public function index() 
+     /**
+      * Undocumented function
+      *
+      * @param string $modal
+      * @param array $mode
+      * @return void
+      */
+    public function index(string $modal, array $mode): void
     {
         $data = [
-            'book'  => Book::all()
+            'books'  => Book::all()
         ];
-
         Log::debug('デバッグ用。$dataの内容です');
         Log::debug($data);
 
         return view('book.index', $data);
-    } 
+    }
 }
